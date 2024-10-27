@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Policy Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+        table {
+            width: 45%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Policy Details</h1>
+<div class="container">
+    <div>
+        <h2>Database 1 Policies</h2>
+        <table>
+            <tr>
+                <th>Policy Number</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Premium</th>
+            </tr>
+            <tr th:each="policy : ${db1Policies}">
+                <td th:text="${policy.policyNumber}"></td>
+                <td th:text="${policy.firstName}"></td>
+                <td th:text="${policy.lastName}"></td>
+                <td th:text="${policy.startDate}"></td>
+                <td th:text="${policy.endDate}"></td>
+                <td th:text="${policy.premium}"></td>
+            </tr>
+        </table>
+    </div>
+
+    <div>
+        <h2>Database 2 Policies</h2>
+        <table>
+            <tr>
+                <th>Policy Number</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Premium</th>
+            </tr>
+            <tr th:each="policy : ${db2Policies}">
+                <td th:text="${policy.policyNumber}"></td>
+                <td th:text="${policy.firstName}"></td>
+                <td th:text="${policy.lastName}"></td>
+                <td th:text="${policy.startDate}"></td>
+                <td th:text="${policy.endDate}"></td>
+                <td th:text="${policy.premium}"></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
